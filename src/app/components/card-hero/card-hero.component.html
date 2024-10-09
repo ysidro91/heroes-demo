@@ -1,0 +1,17 @@
+<mat-card appearance="outlined">
+<mat-card-header>
+    <mat-card-title>Nombre: {{ hero?.name }}</mat-card-title>
+    <mat-card-subtitle>Descripción: {{ hero?.description ? hero?.description : '' }} </mat-card-subtitle>
+</mat-card-header>
+<mat-card-content>
+    <p>Fecha creacion: {{ hero?.created | date:'medium' }}</p>
+    @if (hero?.updated) {
+        <p>Fecha actualizacion: {{ hero?.updated | date:'medium' }}</p>
+    } @else {
+        <p>Sin cambios</p>
+    }
+</mat-card-content>
+<mat-card-actions>
+    <button mat-flat-button (click)="closeCard()">Cerrar</button>
+</mat-card-actions>
+</mat-card>

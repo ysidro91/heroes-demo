@@ -1,0 +1,33 @@
+<h3>{{ id ? 'Editar Heroe' : 'Crear Heroe' }}</h3>
+
+@if (heroForm) {
+    <form [formGroup]="heroForm" (ngSubmit)="process()">
+        <mat-form-field class="example-full-width">
+            <mat-label>Nombre</mat-label>
+            <input matInput formControlName="name" appUppercase>
+        </mat-form-field>
+    
+        <mat-form-field class="example-full-width">
+            <mat-label>Descripcion</mat-label>
+            <textarea matInput formControlName="description"></textarea>
+        </mat-form-field>
+    
+        <div>
+            <label>¿Puede volar?</label>
+            <mat-radio-group formControlName="fly">
+                <mat-radio-button [value]="true">Si</mat-radio-button>
+                <mat-radio-button [value]="false">No</mat-radio-button>
+            </mat-radio-group>
+        </div>
+        
+        <div class="button-row">
+            <button mat-flat-button type="submit">{{ id ? 'Editar' : 'Crear' }}</button>
+            <button mat-flat-button type="button" (click)="goBack()">Atras</button>
+        </div>
+    </form>
+}
+
+
+@if (loading) {
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+}
