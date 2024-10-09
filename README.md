@@ -4,12 +4,8 @@ Ejercicio hecho con [Angular CLI](https://github.com/angular/angular-cli) versio
 
 ## Ejecutar proyecto
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Ejecutar `ng serve` en la terminal e ir a la siguiente dirección `http://localhost:4200/`.
 
-## Build
+## Correr pruebas unitarias
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Ejecutar `ng test`. Las pruebas demoran unos segundos porque el service tiene unos delays para simular una llamada al backend.

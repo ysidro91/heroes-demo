@@ -9,7 +9,6 @@ import { HeroesService } from '../../services/heroes.service';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
-import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-handle-hero',
@@ -28,7 +27,7 @@ import { Subscription } from 'rxjs';
 })
 export class HandleHeroComponent {
   heroForm!: FormGroup;
-  id!: number;
+  id!: number | undefined;
   private snackBar = inject(MatSnackBar);
   loading: boolean = false;
 

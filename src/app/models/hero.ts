@@ -2,7 +2,7 @@ export interface Hero {
     id: number;
     name: string;
     description?: string;
-    fly?: boolean;
+    fly: boolean;
     created: Date;
     updated?: Date;
 }

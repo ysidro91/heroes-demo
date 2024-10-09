@@ -8,24 +8,25 @@ import { delay, Observable, of } from 'rxjs';
 export class HeroesService {
 
   private heroes: Hero[] = [];
-  private delay = 2000;
+  private delayTwoSeconds = 2000;
+  private delayOneSecond = 1000;
 
   constructor() { }
 
   getAll(): Observable<Hero[]> {
-    return of(this.heroes).pipe(delay(this.delay));
+    return of(this.heroes).pipe(delay(this.delayTwoSeconds));
   }
 
   getById(id: number): Observable<Hero | undefined> {
     let hero = this.heroes.find((hero: Hero) => hero.id === id);
-    return of(hero).pipe(delay(this.delay));
+    return of(hero).pipe(delay(this.delayOneSecond));
   }
 
   add(hero: Hero): Observable<void> {
     hero.id = this.generateId();
     hero.created = new Date();
     this.heroes.push(hero);
-    return of(undefined).pipe(delay(this.delay));
+    return of(undefined).pipe(delay(this.delayTwoSeconds));
   }
 
   update(id: number, newHero: Hero): Observable<void> {
@@ -36,13 +37,13 @@ export class HeroesService {
       currentHero.fly = newHero.fly;
       currentHero.updated = new Date();
     }
-    return of(undefined).pipe(delay(this.delay));
+    return of(undefined).pipe(delay(this.delayOneSecond));
   }
 
   delete(id: number): Observable<void> {
     let heroIndex = this.heroes.findIndex((hero: Hero) => hero.id === id);
     this.heroes.splice(heroIndex, 1);
-    return of(undefined).pipe(delay(this.delay));
+    return of(undefined).pipe(delay(this.delayOneSecond));
   }
 
   private generateId(): number {
