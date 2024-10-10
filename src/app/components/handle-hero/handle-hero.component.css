@@ -21,3 +21,9 @@ button {
 .radio-field {
     margin-bottom: 5px;
 }
+
+h3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
